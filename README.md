@@ -2,9 +2,12 @@
 sql travel dataset final project
 My goal for this project is to get some more insight on using Sql to gather information from this travel dataset. 
 <img width="1066" height="511" alt="table schema travel" src="https://github.com/user-attachments/assets/8d9c7eeb-1fe3-4dfe-9cd3-af995eaa3840" />
+
 --SELECT STATEMENT 1
+
 	--Finding the number of flights departing from each airport but only those that have been 'Arrived ' or 'Scheduled' and then sorted by busiest airport.
 	--This shows the busiest airport with the most flight counts is 'DME'.
+	
 SELECT departure_airport, COUNT(flight_id) AS flight_count
 FROM flights
 WHERE status IN ('Arrived', 'Scheduled')
