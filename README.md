@@ -9,9 +9,13 @@ My goal for this project is to get some more insight on using Sql to gather info
 	--This shows the busiest airport with the most flight counts is 'DME'.
 	
 SELECT departure_airport, COUNT(flight_id) AS flight_count
+
 FROM flights
+
 WHERE status IN ('Arrived', 'Scheduled')
+
 GROUP BY departure_airport
+
 ORDER BY flight_count DESC;
 
 --SELECT STATEMENT 2
