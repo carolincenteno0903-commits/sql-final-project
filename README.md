@@ -61,3 +61,5 @@ FROM airports_data a
 LEFT JOIN DepartureCounts d ON a.airport_code = d.departure_airport
 LEFT JOIN ArrivalCounts r ON a.airport_code = r.arrival_airport
 ORDER BY (d.departures + r.arrivals) DESC;
+
+Citation: Google Gemini
