@@ -15,8 +15,10 @@ GROUP BY departure_airport
 ORDER BY flight_count DESC;
 
 --SELECT STATEMENT 2
+
 	--This statement groups all bookings by their date, calculates the total money earned per day, and sorts them to show the most profitable days first.
 	-- The show that the most profitable booking date was July 25, 2017 with a daily revenue of $2,013,300.
+	
 SELECT book_date, SUM(total_amount) AS daily_revenue, COUNT(book_ref) AS number_of_bookings
 FROM bookings
 WHERE total_amount > 10000
@@ -24,27 +26,31 @@ GROUP BY book_date
 ORDER BY daily_revenue DESC;
 
 --JOIN OPERATIONS
+
 	--Identifying 'High-Value' Customers. This query find passengers who have spent more than the average on bookings.
 	-- In this query I joined the tickets and bookings table to find the passengers who have spent more than $5000 on bookings. 
+	
 SELECT t.passenger_id, b.book_ref, b.total_amount
 FROM tickets t
 JOIN bookings b ON t.book_ref = b.book_ref
 WHERE b.total_amount > 50000
 ORDER BY b.total_amount DESC;
 
-
 --AGGREGATION FUNCTIONS
+
 	--This query identifies which ticket classes (Business, Economy, Comfort) generate the most revenue.
 	--This shows that 'Economy' generates the most revenue. 
+	
 SELECT fare_conditions, COUNT(*) AS total_tickets_sold, SUM(amount) AS total_revenue, AVG(amount) AS average_ticket_price
 FROM ticket_flights
 GROUP BY fare_conditions
 ORDER BY total_revenue DESC;
 
-
 --COMMON TABLE EXPRESSIONS(CTEs)
+
 	--This query uses a CTE to count departures and arrivals separately, then joins them to show which airports are the busiest.
 	--This query helps show that 'Domodedovo International Airport' is the busiest airport with the most departures and arrivals.
+	
 WITH DepartureCounts AS (
     SELECT departure_airport, COUNT(*) AS departures
     FROM flights
