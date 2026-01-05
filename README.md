@@ -1,5 +1,6 @@
 # sql-final-project
 sql travel dataset final project
+The file was too large for Github. I have attached the link from Kaggle. https://www.kaggle.com/datasets/saadharoon27/airlines-dataset
 My goal for this project is to get some more insight on using Sql to gather information from this travel dataset. 
 <img width="1066" height="511" alt="table schema travel" src="https://github.com/user-attachments/assets/8d9c7eeb-1fe3-4dfe-9cd3-af995eaa3840" />
 
